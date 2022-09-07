@@ -12,8 +12,7 @@ function oddEvenSort(arr) {
     if (num % 2 === 0) right.push(num);
     else left.push(num);
   });
-  console.log(left);
-  console.log(right);
+  // console.log(left);
   // let leftSort = left.sort();
   // let rightSort = right.sort();
   // console.log(leftSort);
@@ -22,7 +21,9 @@ function oddEvenSort(arr) {
 }
 
 function validAnagrams(s, t) {
-  // Your code here
+  let first = s.split('').sort().join('');
+  let second = t.split('').sort().join('');
+  return first === second
 }
 
 function reverseBaseSort(arr) {
