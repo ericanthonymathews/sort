@@ -27,14 +27,37 @@ function validAnagrams(s, t) {
 }
 
 function reverseBaseSort(arr) {
-  // Your code here
   arr.sort((a, b) => a - b);
   return arr.sort((a, b) => b.toString().length - a.toString().length);
-
 }
 
 function frequencySort(arr) {
-  // Your code here
+  let frequencies = {};
+  let numbers = [];
+  let results = [];
+  arr.forEach(num => {
+    if (!frequencies[num]) {
+      frequencies[num] = 1
+      numbers.push(num)
+    }
+    else frequencies[num]++;
+  });
+  numbers.sort((a, b) => {
+    return b - a
+  });
+  numbers.sort((a, b) => {
+    return frequencies[a] - frequencies[b]
+  });
+  // console.log(numbers)
+  numbers.forEach(num => {
+    let input = num;
+    let counter = frequencies[num]
+    while (counter > 0) {
+      results.push(input)
+      counter--;
+    }
+  })
+  return results;
 }
 
 module.exports = [
