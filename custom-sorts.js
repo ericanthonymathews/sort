@@ -28,6 +28,9 @@ function validAnagrams(s, t) {
 
 function reverseBaseSort(arr) {
   // Your code here
+  arr.sort((a, b) => a - b);
+  return arr.sort((a, b) => b.toString().length - a.toString().length);
+
 }
 
 function frequencySort(arr) {
